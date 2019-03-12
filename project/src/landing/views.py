@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('Welcome to Backrow!')
+    return render(request, 'index.html')

@@ -3,4 +3,7 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'landing/index.html')
+
+def picker(request):
+    return render(request, 'landing/picker.html')

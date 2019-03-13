@@ -7,3 +7,6 @@ def home(request):
 
 def picker(request):
     return render(request, 'landing/picker.html')
+
+def audience(request):
+    return render(request, 'landing/audience.html')

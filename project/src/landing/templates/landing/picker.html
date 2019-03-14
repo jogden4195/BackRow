@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- end bootstrap-->
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>Google Picker Example</title>
+    <title>Backrow</title>
+
+    <!-- Google picker singin for app-->
+    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
 
     <script type="text/javascript">
 
@@ -81,8 +88,15 @@
   </head>
   <body>
     <div id="result"></div>
+    <div class="jumbotron">
+        <h1 class="display-4">Present</h1>
+        <p class="lead">Share your presentation with the audience</p>
+    </div>
 
     <!-- The Google API Loader script. -->
-    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
+    <div class="row justify-content-center">
+      <button onclick="loadPicker()" type="button" class="btn btn-primary">Present with Google Slides</button>
+      <!-- <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script> -->
+    </div>
   </body>
 </html>

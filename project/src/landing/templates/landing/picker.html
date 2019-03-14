@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- end bootstrap-->
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <title>Backrow</title>
 
@@ -82,6 +85,7 @@
       if (data.action == google.picker.Action.PICKED) {
         var fileId = data.docs[0].id;
         alert('The user selected: ' + fileId);
+        document.getElementById("slideID").value = fileId;
       }
     }
     </script>
@@ -92,6 +96,14 @@
         <h1 class="display-4">Present</h1>
         <p class="lead">Share your presentation with the audience</p>
     </div>
+    
+    <!-- Form where fileId will fill input box -->
+    <div class="row justify-content-center">
+      <form>
+        <input id="slideID" type="text" name="slideID" value="slideID here">
+        <button type="button">Submit</button>
+      </form>
+    </div>    
 
     <!-- The Google API Loader script. -->
     <div class="row justify-content-center">

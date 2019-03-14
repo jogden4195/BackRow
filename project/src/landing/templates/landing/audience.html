@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
-  <title>For the Audience</title>
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/audience.css' %}">
+  <title>Backrow Audience</title>
 </head>
 
 <body>
-  <h2>Ask your presenter for the URL ;)</h2>
+  <div class="jumbotron">
+    <h1 class="display-4">Audience</h1>
+    <p class="lead">Ask questions, be heard</p>
+  </div>
+  <div class="row justify-content-center">
+    <div class="card text-center w-75 bg-light mb-3">
+      <div class="card-body p-5">
+        <form>
+          <div class="form-group">
+            <p class="card-title h5 lead">Search for presentations</p>
+            <input type="card-text" class="form-control" id="InputURL" placeholder="Presentation URL">
+          </div>
+          <div class="row justify-content-center">
+            <a href="#" role="button" class="btn btn-primary">Search</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

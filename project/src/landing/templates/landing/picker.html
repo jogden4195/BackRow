@@ -88,6 +88,14 @@
         document.getElementById("slideID").value = fileId;
       }
     }
+
+    function buildPresentation() {
+      var fileId = document.getElementById("slideID").value;
+      // TODO: change domain name later
+      var url = 'http://localhost:8000/presentation/' + fileId;
+      window.location.assign(url);
+    }
+
     </script>
   </head>
   <body>
@@ -101,7 +109,7 @@
     <div class="row justify-content-center">
       <form>
         <input id="slideID" type="text" name="slideID" value="slideID here">
-        <button type="button">Submit</button>
+        <button type="button" onclick="buildPresentation()">Submit</button>
       </form>
     </div>    
 

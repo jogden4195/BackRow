@@ -25,12 +25,27 @@
             <input type="card-text" class="form-control" id="InputURL" placeholder="Presentation URL">
           </div>
           <div class="row justify-content-center">
-            <a href="#" role="button" class="btn btn-primary">Search</a>
+            <input id="InputURLSubmit" type="button" class="btn btn-primary" value="Search"/>
           </div>
         </form>
       </div>
     </div>
   </div>
+  <!--Script for searching for presentation-->
+  <!--TODO: Implement database to hold access code & url-->
+  <script>
+    document.querySelector('#InputURL').focus();
+    document.querySelector('#InputURL').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#InputURLSubmit').click();
+        }
+    };
+
+    document.querySelector('#InputURLSubmit').onclick = function(e) {
+        var roomName = document.querySelector('#InputURL').value;
+        window.location.assign(roomName);
+    };
+</script>
 </body>
 
 </html>

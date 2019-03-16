@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- end bootstrap-->
+<head>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>Backrow</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <!-- end bootstrap-->
 
-    <!-- Google picker singin for app-->
-    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Backrow</title>
 
-    <script type="text/javascript">
+  <!-- Google picker singin for app-->
+  <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
+
+  <script type="text/javascript">
 
     // The Browser API key obtained from the Google API Console.
     // Replace with your own Browser API key, or your own key.
@@ -35,18 +37,18 @@
 
     // Use the Google API Loader script to load the google.picker script.
     function loadPicker() {
-      gapi.load('auth', {'callback': onAuthApiLoad});
-      gapi.load('picker', {'callback': onPickerApiLoad});
+      gapi.load('auth', { 'callback': onAuthApiLoad });
+      gapi.load('picker', { 'callback': onPickerApiLoad });
     }
 
     function onAuthApiLoad() {
       window.gapi.auth.authorize(
-          {
-            'client_id': clientId,
-            'scope': scope,
-            'immediate': false
-          },
-          handleAuthResult);
+        {
+          'client_id': clientId,
+          'scope': scope,
+          'immediate': false
+        },
+        handleAuthResult);
     }
 
     function onPickerApiLoad() {
@@ -67,16 +69,16 @@
         var view = new google.picker.View(google.picker.ViewId.DOCS);
         //view.setMimeTypes("image/png,image/jpeg,image/jpg");
         var picker = new google.picker.PickerBuilder()
-            .enableFeature(google.picker.Feature.NAV_HIDDEN)
-            .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
-            .setAppId(appId)
-            .setOAuthToken(oauthToken)
-            .addView(view)
-            .addView(new google.picker.DocsUploadView())
-            .setDeveloperKey(developerKey)
-            .setCallback(pickerCallback)
-            .build();
-         picker.setVisible(true);
+          .enableFeature(google.picker.Feature.NAV_HIDDEN)
+          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
+          .setAppId(appId)
+          .setOAuthToken(oauthToken)
+          .addView(view)
+          .addView(new google.picker.DocsUploadView())
+          .setDeveloperKey(developerKey)
+          .setCallback(pickerCallback)
+          .build();
+        picker.setVisible(true);
       }
     }
 
@@ -96,27 +98,49 @@
       window.location.assign(url);
     }
 
-    </script>
-  </head>
-  <body>
-    <div id="result"></div>
-    <div class="jumbotron">
-        <h1 class="display-4">Present</h1>
-        <p class="lead">Share your presentation with the audience</p>
-    </div>
-    
-    <!-- Form where fileId will fill input box -->
-    <div class="row justify-content-center">
-      <form>
-        <input id="slideID" type="text" name="slideID" value="slideID here">
-        <button type="button" onclick="buildPresentation()">Submit</button>
-      </form>
-    </div>    
+  </script>
+</head>
 
-    <!-- The Google API Loader script. -->
-    <div class="row justify-content-center">
-      <button onclick="loadPicker()" type="button" class="btn btn-primary">Present with Google Slides</button>
-      <!-- <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script> -->
+<body>
+  <div id="result"></div>
+  <div class="jumbotron pb-0">
+    <h1 class="display-4">Present</h1>
+    <p class="lead">Share your presentation with the audience</p>
+    <div class="row justify-content-left mt-5 mb-0">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Present</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/audience">Audience</a>
+        </li>
+      </ul>
     </div>
-  </body>
+  </div>
+
+  <div class="row justify-content-center mb-5">
+    <!-- The Google API Loader script. -->
+    <button onclick="loadPicker()" type="button" class="btn btn-primary">Present with Google Slides</button>
+  </div>
+
+  <!-- Form where fileId will fill input box -->
+  <div class="row justify-content-center">
+    <div class="card text-center w-75 bg-light mb-3">
+      <div class="card-body p-5">
+        <form>
+          <div class="form-group">
+            <input id="slideID" class="form-control" type="text" name="slideID" value="slideID here">
+          </div>
+          <div class="row justify-content-center">
+            <button type="button" class="btn btn-primary" onclick="buildPresentation()">Present</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

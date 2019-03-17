@@ -1,0 +1,80 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>BackRow</title>
+</head>
+
+<body>
+    <div class="jumbotron pb-0">
+        <h1 class="display-4">Welcome to BackRow</h1>
+        <p class="lead">Never miss a question again</p>
+        <div class="row justify-content-left mt-5 mb-0">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/picker">Present</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/audience">Audience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h2>What is BackRow?</h2>
+        <p>BackRow is a Question and Answer web app which is meant to make your Google Slides
+            presentations go along smoothly. Made with introverts in mind, never miss the opportunity to ask a question
+            about the context of the presentation by simply submitting your question or comment to the presentation’s
+            question log. At the end of the presentation, the presenter can simply pull up the question log and go
+            through
+            the audience’s submitted questions one by one. Never miss a question again with BackRow!
+        </p>
+    </div>
+    <div class="container">
+        <h2>Meet the team!</h2>
+    </div>
+    <div class="row justify-content-center">
+        <div class="card" style="width: 18rem;">
+            {% load static %} <img class="card-img-top" src="{% static '/images/jenn.jpg' %}" alt="Jenn" />
+            <div class="card-body">
+                <h5 class="card-title">Jenn Ogden</h5>
+                <p class="card-text">Cohort 6 student.</p>
+            </div>
+            <div class="card-body">
+                <a href="https://github.com/jogden4195" class="card-link">Github</a>
+                <a href="https://twitter.com/jogden95" class="card-link">Twitter</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            {% load static %} <img class="card-img-top" src="{% static '/images/nicole.jpg' %}" alt="Nicole" />
+            <div class="card-body">
+                <h5 class="card-title">Nicole Swanson</h5>
+                <p class="card-text">Cohort 6 student.</p>
+            </div>
+            <div class="card-body">
+                <a href="https://github.com/thenicopixie/" class="card-link">Github</a>
+                <a href="https://twitter.com/Nicolette_Swan" class="card-link">Twitter</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            {% load static %} <img class="card-img-top" src="{% static '/images/Jinji.jpg' %}" alt="Jinji" />
+            <div class="card-body">
+                <h5 class="card-title">Jinji Zhang</h5>
+                <p class="card-text">Cohort 6 student.</p>
+            </div>
+            <div class="card-body">
+                <a href="https://github.com/iamzinzi" class="card-link">Github</a>
+                <a href="https://twitter.com/hizinzi" class="card-link">Twitter</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

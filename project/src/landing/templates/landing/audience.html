@@ -59,7 +59,12 @@
 
     document.querySelector('#InputURLSubmit').onclick = function (e) {
       var roomName = document.querySelector('#InputURL').value;
-      window.location.assign(roomName);
+      try {
+        var i = new URL(roomName)
+        window.location.assign(roomName);
+      } catch(error) {
+        alert("Presentation does not exist! Please enter a valid URL :)");
+      }
     };
   </script>
 </body>

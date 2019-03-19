@@ -12,6 +12,9 @@ def about(request):
 def picker(request):
     return render(request, 'landing/picker.html')
 
+def privacy(request):
+    return render(request, 'landing/privacy.html')
+
 def audience(request):
     return render(request, 'landing/audience.html')
 
@@ -45,7 +48,7 @@ def get_embed_link(file_id):
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(
-                'credentials.json', SCOPES)
+                'client_secret.json', SCOPES)
             creds = flow.run_local_server()
         # Save the credentials for the next run
         with open('token.pickle', 'wb') as token:

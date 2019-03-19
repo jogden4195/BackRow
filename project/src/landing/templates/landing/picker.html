@@ -99,9 +99,11 @@
       var fileId = document.getElementById("slideID").value;
       // TODO: change domain name later
       var domain = window.location.hostname;
-      if (domain === 'localhost') d += ':8000';
-      var url = 'https://' + domain + '/presentation/' + fileId;
-      alert(url)
+      if (domain === 'localhost') {
+        domain += ':8000';
+      }
+      var url = 'http://' + domain + '/presentation/' + fileId;
+      console.log(url);
       window.location.assign(url);
     }
 

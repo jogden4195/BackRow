@@ -5,13 +5,17 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/style.css' %}">
   <title>Backrow</title>
 </head>
 
 <body>
-  <div class="jumbotron">
-    <h1 class="display-4">Welcome to Backrow</h1>
-    <p class="lead">Never miss a question again</p>
+  <div class="jumbotron p-0">
+    {% load static %}
+    <img style="max-width:450px;" src="{% static 'images/backrow.png' %}" class="img-responsive p-0 m-0" alt="backrow logo">
+    <!-- <h1 class="display-4">Welcome to Backrow</h1>
+    <p class="lead">Never miss a question again</p> -->
   </div>
   <div class="row justify-content-center">
     <div class="d-flex justify-content-around">
@@ -23,6 +27,9 @@
       </div>
     </div>
   </div>
+  <footer class="container">
+    <p> © BackRow 2019 </p>
+  </footer>
 </body>
 
 </html>

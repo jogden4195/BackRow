@@ -98,7 +98,12 @@
     function buildPresentation() {
       var fileId = document.getElementById("slideID").value;
       // TODO: change domain name later
-      var url = 'http://localhost:8000/presentation/' + fileId;
+      var domain = window.location.hostname;
+      if (domain === 'localhost') {
+        domain += ':8000';
+      }
+      var url = 'http://' + domain + '/presentation/' + fileId;
+      console.log(url);
       window.location.assign(url);
     }
 

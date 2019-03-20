@@ -12,7 +12,7 @@
 
 <body>
   <div class="jumbotron p-0">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center w-100 h-100 m-0">
       {% load static %}
       <img src="{% static 'images/backrow4.png' %}" class="img-responsive p-0 m-0 w-25 h-25" alt="backrow logo">
     </div>
@@ -21,15 +21,15 @@
   </div>
   <div class="row justify-content-center">
     <div class="d-flex justify-content-around">
-      <div class="col-sm">
+      <div class="col-md">
         <a href="/picker" role="button" class="btn btn-primary p-2">Presenter</a>
       </div>
-      <div class="col-sm">
+      <div class="col-md">
         <a href="/audience" role="button" class="btn btn-primary p-2">Audience</a>
       </div>
     </div>
   </div>
-  <footer class="container">
+  <footer>
     <p> © BackRow 2019 </p>
   </footer>
 </body>

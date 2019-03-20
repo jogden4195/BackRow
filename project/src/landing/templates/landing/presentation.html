@@ -31,8 +31,17 @@
           <a class="nav-link active" href="/#">Presentation</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/about">About Us</a>
-          </li>
+          <a class="nav-link" href="/about">About Us</a>
+        </li>
+      </ul>
+      <ul class="nav nav-tabs form-inline my-2 my-lg-0">
+        <li class="nav-item">
+          {% if user.is_authenticated %}
+          <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+          {% else %}
+          <a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+        {% endif %}
+        </li>
       </ul>
     </div>
 
@@ -56,6 +65,7 @@
 </body>
 <script>
   var roomName = '{{ elink }}';
+  var userName = '{{ user.get_username }}' || 'Anonymous';
 
   var chatSocket = new WebSocket(
     'ws://' + window.location.host +
@@ -80,7 +90,7 @@
 
   document.querySelector('#chat-message-submit').onclick = function (e) {
     var messageInputDom = document.querySelector('#chat-message-input');
-    var message = messageInputDom.value;
+    var message = userName + ' : ' + messageInputDom.value;
     chatSocket.send(JSON.stringify({
       'message': message
     }));

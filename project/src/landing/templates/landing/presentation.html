@@ -39,7 +39,7 @@
           {% if user.is_authenticated %}
           <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
           {% else %}
-          <a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+          <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
         {% endif %}
         </li>
       </ul>
@@ -58,7 +58,7 @@
     <input id="chat-message-submit" type="button" class="btn btn-primary" value="Send" />
   </div>
 
-  <footer class="container" style="color: grey; font-size: smaller;">
+  <footer style="color: grey; font-size: smaller;">
     <p> © BackRow 2019 </p>
   </footer>
 

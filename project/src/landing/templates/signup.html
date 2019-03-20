@@ -16,8 +16,8 @@
 
 <body>
   <div class="jumbotron pb-0">
-    <h1 class="display-4">Audience</h1>
-    <p class="lead">Ask questions, be heard</p>
+    <h1 class="display-4">Sign Up</h1>
+    <p class="lead">Join us, we have cookies</p>
     <div class="row justify-content-left mt-5 mb-0">
       <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -32,31 +32,40 @@
         <li class="nav-item">
           <a class="nav-link" href="/about">About Us</a>
         </li>
+        <ul class="nav nav-tabs form-inline my-2 my-lg-0">
+            <li class="nav-item ml-3">
+                {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+                {% else %}
+                <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+            {% endif %}
+            </li>
+        </ul>
       </ul>
     </div>
   </div>
   <div class="row justify-content-center mt-5 mb-0">
-  <h2>Sign up</h2>
+    <h2>Sign up</h2>
   </div>
   <div class="row justify-content-center mt-5 mb-0">
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form %}
       <p>
         {{ field.label_tag }}<br>
         {{ field }}
         {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
+        <small style="color: grey">{{ field.help_text }}</small>
         {% endif %}
         {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
+        <p style="color: red">{{ error }}</p>
         {% endfor %}
       </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+      {% endfor %}
+      <button type="submit">Sign up</button>
+    </form>
   </div>
-  <footer class="container">
+  <footer>
     <p> © BackRow 2019 </p>
   </footer>
 </body>

@@ -4,5 +4,20 @@ footer {
        padding-left: 2%;
        font-size: smaller;
        color: grey;
-       width: 100%;
+}
+img {
+    width: 75%;
+    height: 75%;
+}
+@media only screen and (min-width: 600px) {
+    img {
+        width: 50%;
+        height: 50%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    img {
+        width: 25%;
+        height: 25%;
+    }
 }

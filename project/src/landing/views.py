@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from landing.forms import SignUpForm
 import requests
@@ -18,7 +17,6 @@ def picker(request):
 def privacy(request):
     return render(request, 'landing/privacy.html')
 
-@login_required
 def audience(request):
     return render(request, 'landing/audience.html')
 

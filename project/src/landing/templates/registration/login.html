@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Styling/CSS -->
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/audience.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/style.css' %}">
+
+  <title>Backrow Audience</title>
+</head>
+
+<body>
+  <div class="jumbotron pb-0">
+    <h1 class="display-4">Audience</h1>
+    <p class="lead">Ask questions, be heard</p>
+    <div class="row justify-content-left mt-5 mb-0">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/picker/">Present</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/#">Audience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  {% if form.errors %}
+  <div class="row justify-content-center">
+    <p>Your username and password didn't match. Please try again.</p>
+  </div>
+  {% endif %}
+
+  {% if next %}
+  {% if user.is_authenticated %}
+  <div class="row justify-content-center">
+    <p>Your account doesn't have access to this page. To proceed,
+      please login with an account that has access.</p>
+  </div>
+  {% else %}
+  <div class="row justify-content-center">
+    <p>Please login to see this page.</p>
+  </div>
+  {% endif %}
+  {% endif %}
+  <div class="row justify-content-center">
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <table>
+
+        <tr>
+          <td>{{ form.username.label_tag }}</td>
+          <td>{{ form.username }}</td>
+        </tr>
+
+        <tr>
+          <td>{{ form.password.label_tag }}</td>
+          <td>{{ form.password }}</td>
+        </tr>
+      </table>
+
+      <input type="submit" value="login" />
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+  </div>
+  <div class="row justify-content-center">
+    <p>Don't have an account? <a href="http://localhost:8000/signup/"> Sign up here!</a></p>
+  </div>
+  <footer class="container">
+    <p> © BackRow 2019 </p>
+  </footer>
+</body>
+
+</html>

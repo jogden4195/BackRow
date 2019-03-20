@@ -2,6 +2,9 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'landing/style.css' %}">
+
     <title>BackRow</title>
 </head>
 
@@ -25,11 +28,11 @@
                 </li>
             </ul>
             <ul class="nav nav-tabs form-inline my-2 my-lg-0">
-                <li class="nav-item ml-3">
+                <li class="nav-item">
                     {% if user.is_authenticated %}
                     <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
                     {% else %}
-                    <a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+                    <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
                 {% endif %}
                 </li>
             </ul>
@@ -88,7 +91,7 @@
     </div>
 
 </body>
-<footer class="container" style="color: grey; font-size: smaller; margin-top: 20px;">
+<footer>
     <p> © BackRow 2019 </p>
 </footer>
 

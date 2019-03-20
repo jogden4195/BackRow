@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
   {% load static %}
@@ -11,24 +13,20 @@
 </head>
 
 <body>
-  <div class="jumbotron p-0">
+  <div class="jumbotron">
     <div class="row justify-content-center">
       {% load static %}
-      <img src="{% static 'images/backrow4.png' %}" class="img-responsive p-0 m-0 w-25 h-25" alt="backrow logo">
+      <img src="{% static 'images/backrow4.png' %}" class="img-responsive p-0 m-0" alt="backrow logo">
     </div>
-    <!-- <h1 class="display-4">Welcome to Backrow</h1>
-    <p class="lead">Never miss a question again</p> -->
   </div>
+  <div class="container">
   <div class="row justify-content-center">
-    <div class="d-flex justify-content-around">
-      <div class="col-sm">
-        <a href="/picker" role="button" class="btn btn-primary p-2">Presenter</a>
-      </div>
-      <div class="col-sm">
-        <a href="/audience" role="button" class="btn btn-primary p-2">Audience</a>
-      </div>
+    <div class="d-flex flex-wrap justify-content-center">
+        <a href="/picker" role="button" class="btn-lg btn-primary p-2 m-3">Presenter</a>
+        <a href="/audience" role="button" class="btn-lg btn-primary p-2 m-3">Audience</a>
     </div>
   </div>
+</div>
   <footer class="container">
     <p> © BackRow 2019 </p>
   </footer>

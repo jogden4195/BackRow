@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Styling/CSS -->
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/audience.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'landing/style.css' %}">
+
+  <title>Backrow Audience</title>
+</head>
+
+<body>
+  <div class="jumbotron pb-0">
+    <h1 class="display-4">Audience</h1>
+    <p class="lead">Ask questions, be heard</p>
+    <div class="row justify-content-left mt-5 mb-0">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/picker/">Present</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/#">Audience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-5 mb-0">
+  <h2>Sign up</h2>
+  </div>
+  <div class="row justify-content-center mt-5 mb-0">
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+  </div>
+  <footer class="container">
+    <p> © BackRow 2019 </p>
+  </footer>
+</body>
+
+</html>

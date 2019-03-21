@@ -9,6 +9,9 @@ img {
     width: 75%;
     height: 75%;
 }
+.jumbotron {
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
 @media only screen and (min-width: 600px) {
     img {
         width: 50%;

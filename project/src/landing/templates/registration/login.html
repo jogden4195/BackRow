@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <!--Bootstrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
   <!-- Styling/CSS -->
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'landing/audience.css' %}">
@@ -58,32 +58,39 @@
   </div>
   {% else %}
   <div class="row justify-content-center">
-    <p>Please login to see this page.</p>
-  </div>
-  {% endif %}
-  {% endif %}
-  <div class="row justify-content-center">
-    <form method="post" action="{% url 'login' %}">
-      {% csrf_token %}
-      <table>
+    <div class="card text-center w-25 bg-light mb-3 p-3">
+      <div class="row justify-content-center">
+        <p>Please login to see this page.</p>
+      </div>
+      {% endif %}
+      {% endif %}
+      <div class="row justify-content-center">
+        <form method="post" action="{% url 'login' %}">
+          <div class="form-group mb-2">
+            {% csrf_token %}
+            <table>
 
-        <tr>
-          <td>{{ form.username.label_tag }}</td>
-          <td>{{ form.username }}</td>
-        </tr>
+              <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+              </tr>
 
-        <tr>
-          <td>{{ form.password.label_tag }}</td>
-          <td>{{ form.password }}</td>
-        </tr>
-      </table>
-
-      <input type="submit" value="login" />
-      <input type="hidden" name="next" value="{{ next }}" />
-    </form>
-  </div>
-  <div class="row justify-content-center">
-    <p>Don't have an account? <a href="http://localhost:8000/signup/"> Sign up here!</a></p>
+              <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="row justify-content-center">
+            <input type="submit" class="btn btn-primary w-50" value="login" />
+          </div>
+          <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+      </div>
+      <div class="row justify-content-center">
+        <p>Don't have an account? <a href="http://localhost:8000/signup/"> Sign up here!</a></p>
+      </div>
+    </div>
   </div>
   <footer>
     <p> © BackRow 2019 </p>

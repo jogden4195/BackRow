@@ -62,10 +62,12 @@
       allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
   </div>
   <div class="row justify-content-center mt-4">
-    <textarea readonly id="chat-log" cols="115" rows="16"></textarea><br />
+    <textarea readonly id="chat-log" cols="115" rows="16" style="background-color: #e9ecef; border: 2px solid lightgrey; padding: 1%;"></textarea><br />
   </div>
   <div class="row justify-content-center mb-5">
-    <input id="chat-message-input" type="text" size="108" /><br />
+    <div class="text_wrapper">
+      <input id="chat-message-input" type="text" size="110" class="p-1"/><br />
+    </div>
     <input id="chat-message-submit" type="button" class="btn btn-primary" value="Send" />
   </div>
 

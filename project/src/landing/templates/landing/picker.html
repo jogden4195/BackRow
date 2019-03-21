@@ -115,6 +115,8 @@
   <div class="jumbotron pb-0">
     <h1 class="display-4">Present</h1>
     <p class="lead">Share your presentation with the audience</p>
+
+    <div class="d-flex flex-row">
     <div class="row justify-content-left mt-5 mb-0">
       <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -140,6 +142,16 @@
         </li>
       </ul>
     </div>
+    {% if user.is_authenticated %}
+    <div style="position: absolute; right:0; color: lightslategrey;" class="mt-5 pb-0">
+        <ul class="nav nav-tabs mr-4 mb-0">
+            <li class="nav-item">
+                <p class="lead" >hello, {{ user.get_username }}</p>
+            </li>
+        </ul>
+    </div>
+    {% endif %}
+</div>
   </div>
 
   <div class="row justify-content-center mb-5">

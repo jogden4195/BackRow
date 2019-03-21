@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'landing/style.css' %}">
 
@@ -10,32 +10,43 @@
 
 <body>
     <div class="jumbotron pb-0">
+
         <h1 class="display-4">About Us</h1>
         <p class="lead">Learn about BackRow</p>
-        <div class="row justify-content-left mt-5 mb-0">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/picker">Present</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/audience">Audience</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">About Us</a>
-                </li>
-            </ul>
-            <ul class="nav nav-tabs form-inline my-2 my-lg-0">
-                <li class="nav-item">
-                    {% if user.is_authenticated %}
-                    <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
-                    {% else %}
-                    <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-                {% endif %}
-                </li>
-            </ul>
+
+        <div class="d-flex flex-row">
+            <div class="row justify-content-left mt-5 mb-0">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/picker">Present</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/audience">Audience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        {% if user.is_authenticated %}
+                        <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+                        {% else %}
+                        <a class="nav-link" href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+                    {% endif %}
+                    </li>
+                </ul>
+            </div>
+            {% if user.is_authenticated %}
+            <div style="position: absolute; right:0; color: lightslategrey;" class="mt-5 pb-0">
+                <ul class="nav nav-tabs mr-4 mb-0">
+                    <li class="nav-item">
+                        <p class="lead" >hello, {{ user.get_username }}</p>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
         </div>
     </div>
     <div class="container">
@@ -53,8 +64,8 @@
     </div>
     <div class="row justify-content-center">
         <div class="card" style="width: 18rem;">
-            {% load static %} <img class="card-img-top" style="width: 100%; height: 15vw; object-fit: cover;"
-                src="{% static '/images/jenn.jpg' %}" alt="Jenn" />
+            {% load static %} <img class="card-img-top" style="width: 100%; height: 15vw; object-fit: cover;" src="{% static '/images/jenn.jpg' %}"
+                alt="Jenn" />
             <div class="card-body">
                 <h5 class="card-title">Jenn Ogden</h5>
                 <p class="card-text">Cohort 6 student.</p>
@@ -65,8 +76,8 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            {% load static %} <img class="card-img-top" style="width: 100%; height: 15vw; object-fit: cover;"
-                src="{% static '/images/nicole.jpg' %}" alt="Nicole" />
+            {% load static %} <img class="card-img-top" style="width: 100%; height: 15vw; object-fit: cover;" src="{% static '/images/nicole.jpg' %}"
+                alt="Nicole" />
             <div class="card-body">
                 <h5 class="card-title">Nicole Swanson</h5>
                 <p class="card-text">Cohort 6 student.</p>
@@ -77,8 +88,8 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            {% load static %} <img class="card-img-top" style="width: 100%; height: 15vw; object-fit: cover;"
-                src="{% static '/images/jinji.jpg' %}" alt="Jinji" />
+            {% load static %} <img class="card-img-top" style="width: 100%; height: 15vw; object-fit: cover;" src="{% static '/images/jinji.jpg' %}"
+                alt="Jinji" />
             <div class="card-body">
                 <h5 class="card-title">Jinji Zhang</h5>
                 <p class="card-text">Cohort 6 student.</p>

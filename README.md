@@ -40,8 +40,8 @@ Deployed using
 * [Bootstrap](https://getbootstrap.com/) - Used for frontend
 
 ## Authors
-* Jenn Ogden
-* Nicole Swanson
-* Jinji Zhang
+* Jenn Ogden, Github: [jogden4195](https://github.com/jogden4195) | Twitter: [@jogden95](https://twitter.com/jogden95) 
+* Nicole Swanson, Github: [thenicopixie](https://github.com/thenicopixie) | Twitter: [@Nicolette_Swan](https://twitter.com/Nicolette_Swan)
+* Jinji Zhang, Github: [iamzinzi](https://github.com/iamzinzi) | Twitter: [@hizinzi](https://twitter.com/hizinzi)
 
 ## Acknowledgments
